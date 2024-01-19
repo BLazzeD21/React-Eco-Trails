@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  &__wrapper {
+    background: linear-gradient(268deg, $mint 42%, $lagoon 102.43%);  
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 300;
+  }
+}

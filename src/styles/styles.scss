@@ -4,4 +4,11 @@
 @import './base/general';
 @import './base/animation';
 
-@import './blocks/main';
+@import './labs/bootstrap';
+
+@import './base/UI/button';
+
+@import './blocks/navbar';
+@import './blocks/header';
+@import './blocks/footer';
+@import './blocks/noMatch';
