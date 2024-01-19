@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar.jsx';
 import Container from '../Container/Container.jsx';
 import Title from '../UI/Title/Title.jsx';
 import logo from '../../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = ({ title }) => {
   const sections = [
@@ -16,12 +17,14 @@ const Header = ({ title }) => {
     <header className='header__wrapper'>
       <Container>
         <div className='header'>
-          <div className='header__inner'>
-            <img className='header__logo'src={logo} alt="Logo" />
-            <Title className='header__title'>
-              {title}
-            </Title>
-          </div>
+          <Link to={'/'}>
+            <div className='header__inner'>
+              <img className='header__logo'src={logo} alt="Logo" />
+              <Title className='header__title'>
+                {title}
+              </Title>
+            </div>
+          </Link>
           <Navbar sections={ sections }/>
         </div>
       </Container>

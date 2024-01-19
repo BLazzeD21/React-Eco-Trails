@@ -1,0 +1,35 @@
+.noMatch {
+  text-align: center;
+  padding: 0 20px;
+  padding-top: 80px;
+  background: linear-gradient(268deg, $mint 1.42%, $white 102.43%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Onest; 
+  &__error {
+    font-size: 260px;
+    font-weight: 800;
+  }
+  &__title {
+    color: $mint;
+    font-size: 50px;
+    font-weight: 600;
+  }
+  &__descr {
+    margin-top: 10px;
+    color: $mint;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 64px;
+  }
+  &__wrapper {
+    height: 700px;
+    padding: 0 20px;
+    background-color: #2C3E50;
+  }
+  &__btn {
+    display: flex;
+    justify-content: center;
+  }
+}
