@@ -4,8 +4,8 @@
   "description": "Base Repository for developing apps using React",
   "main": "/index.js",
   "scripts": {
-    "dev": "npx webpack serve --mode=development --config webpack.config.js --open",
-    "build": "npx webpack --mode=production --config webpack.config.js",
+    "dev": "npx webpack serve --mode=development --config webpack.config.cjs --open",
+    "build": "npx webpack --mode=production --config webpack.config.cjs",
     "clean": "rd /s /q build"
   },
   "author": "BLazzeD",
