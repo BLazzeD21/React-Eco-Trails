@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "npx webpack serve --mode=development --config webpack.config.cjs --open",
-    "build": "npm run clean && npx webpack --mode=production --config webpack.config.cjs",
+    "build": "npx webpack --mode=production --config webpack.config.cjs",
     "clean": "rd /s /q build"
   },
   "author": "BLazzeD",
