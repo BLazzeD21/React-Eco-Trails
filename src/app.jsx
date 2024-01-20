@@ -4,6 +4,8 @@ import Main from './components/Main.jsx';
 import Layout from './components/Layout/Layout.jsx';
 import NoMatch from './pages/NoMatch.jsx';
 
+import { Analytics } from '@vercel/analytics/react';
+
 import './styles/styles.scss';
 
 
@@ -16,6 +18,7 @@ const App = () => {
           <Route path='*' element={<NoMatch />} />
         </Route>
       </Routes>
+      <Analytics />
     </StrictMode>
   );
 };
