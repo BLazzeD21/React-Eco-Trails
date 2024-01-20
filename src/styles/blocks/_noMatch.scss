@@ -6,7 +6,6 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: Onest; 
   &__error {
     font-size: 260px;
     font-weight: 800;
@@ -24,7 +23,7 @@
     margin-bottom: 64px;
   }
   &__wrapper {
-    height: 700px;
+    min-height: 700px;
     padding: 0 20px;
     background-color: #2C3E50;
   }
