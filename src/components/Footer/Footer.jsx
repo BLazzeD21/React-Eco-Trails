@@ -9,9 +9,9 @@ const Footer = () => {
     <div className="footer__wrapper">
       <Container>
         <div className='footer'>
-          <dev className='footer__title'>
+          <div className='footer__title'>
             © Экотропы Ленобласти, {currentYear}
-          </dev>
+          </div>
         </div>
       </Container>
     </div>
