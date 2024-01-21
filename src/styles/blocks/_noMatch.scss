@@ -1,6 +1,5 @@
 .noMatch {
   text-align: center;
-  padding: 40px 20px;
   background: linear-gradient(268deg, $mint 1.42%, $white 102.43%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -22,9 +21,12 @@
     margin-bottom: 64px;
   }
   &__wrapper {
-    min-height: 700px;
-    padding: 0 20px;
-    background-color: #2C3E50;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 20vh 20px;
+    background-color: $navy;
+    width: 100%;
   }
   &__btn {
     display: flex;
