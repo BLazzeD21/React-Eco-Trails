@@ -26,22 +26,3 @@
     justify-content: space-around;
   }
 }
-
-.embla {
-  margin-top: 50px;
-  overflow: hidden;
-}
-
-.embla__container {
-  display: flex;
-}
-
-.embla__slide {
-  flex: 0 0 100%;
-  display: flex;
-  justify-content: center;
-  min-width: 0;
-  img {
-    border-radius: 15px;
-  }
-}
