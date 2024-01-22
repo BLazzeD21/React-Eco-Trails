@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar.jsx';
 import Container from '../Container/Container.jsx';
 import Title from '../UI/Title/Title.jsx';
-import logo from '../../../public/logo.png';
+import logo from '/public/images/logo.png';
 import { Link } from 'react-router-dom';
 
 const Header = ({ title }) => {

@@ -2,9 +2,12 @@
   &__wrapper {
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 1000px;
     padding: 20vh 20px;
-    // background: url('/public/main_background.jpg');
-    background: url('../../../public/main_background.jpg');
+    background: 
+		linear-gradient(rgba($jungle, 0.13), rgba($french-navy, 0.2)), 
+		url('/public/images/main_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
