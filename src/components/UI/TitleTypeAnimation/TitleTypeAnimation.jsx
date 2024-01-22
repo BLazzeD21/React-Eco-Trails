@@ -1,19 +1,18 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
-import ecotrailPoints from '../../../store/points';
 
-const TitleTypeAnimation = () => {
+const TitleTypeAnimation = ({ ecotrailNames, delay, speed }) => {
   const titles = [];
 
-  ecotrailPoints.forEach((point) => {
-    titles.push(point.name, 1000);
+  ecotrailNames.forEach((point) => {
+    titles.push(point, delay);
   });
 
   return (
     <TypeAnimation
       sequence={titles}
       wrapper="div"
-      speed={30}
+      speed={speed}
       repeat={Infinity}
       className={'home__title'}
     />

@@ -1,19 +1,47 @@
 .home {
+  margin-top: 50px;
+  max-width: 1000px;
   &__wrapper {
     display: flex;
-    align-items: center;
-    height: 1000px;
-    padding: 20vh 20px;
+    height: 850px;
+    padding: 50px 50px;
     background: 
-		linear-gradient(rgba($jungle, 0.13), rgba($french-navy, 0.2)), 
+		linear-gradient(rgba($jungle, 0.13), rgba($french-navy, 0.5)), 
 		url('/public/images/main_background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
   &__title {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
     color: $white;
-    font-size: 4rem;
+    font-size: 50px;
     font-weight: 200;
     text-shadow: 2.5px 2.5px $jungle;
+  }
+  &__btns {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.embla {
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  img {
+    border-radius: 15px;
   }
 }
