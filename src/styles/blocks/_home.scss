@@ -1,10 +1,10 @@
 .home {
-  margin-top: 50px;
   max-width: 1000px;
   &__wrapper {
     display: flex;
-    height: 850px;
-    padding: 50px 50px;
+    align-items: center;
+    height: 100vh;
+    padding: 50px 0;
     background: 
 		linear-gradient(rgba($navy, .13), rgba($french-navy, .7)), 
 		url('/public/images/main_background.jpg');
