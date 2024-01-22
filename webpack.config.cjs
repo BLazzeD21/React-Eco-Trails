@@ -10,6 +10,9 @@ const production = process.env.NODE_ENV === 'production';
 const ASSET_PATH = production ? '/' : 'auto';
 
 module.exports = {
+  performance: {
+    hints: false,
+  },
   entry: { index: path.resolve(__dirname, './src/index.js') },
   output: {
     path: path.resolve(__dirname, './build'),
