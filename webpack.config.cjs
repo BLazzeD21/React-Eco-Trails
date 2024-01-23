@@ -5,15 +5,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 const production = process.env.NODE_ENV === 'production';
 const ASSET_PATH = production ? '/' : 'auto';
+// const HINTS = production ?  : 'error';
 
 module.exports = {
   performance: {
-    hints: false,
+    hints: 'warning',
   },
-  entry: { index: path.resolve(__dirname, './src/index.js') },
+  entry: {
+    bundle: path.resolve(__dirname, './src/index.js'),
+  },
   output: {
     path: path.resolve(__dirname, './build'),
     publicPath: ASSET_PATH,
@@ -63,9 +67,27 @@ module.exports = {
     new NodePolyfillPlugin(),
   ],
   optimization: {
+    minimize: true,
     minimizer: [
       new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+        parallel: true,
         extractComments: false,
+      }),
+      new ImageMinimizerPlugin({
+        minimizer: {
+          // Implementation
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          // Options
+          options: {
+            plugins: [
+              'imagemin-gifsicle',
+              'imagemin-mozjpeg',
+              'imagemin-pngquant',
+              'imagemin-svgo',
+            ],
+          },
+        },
       }),
     ],
   },
