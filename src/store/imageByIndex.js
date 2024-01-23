@@ -1,19 +1,28 @@
-import image1 from '../../public/images/places/1.jpg';
-import image2 from '../../public/images/places/2.jpg';
-import image3 from '../../public/images/places/3.jpg';
-import image4 from '../../public/images/places/4.jpg';
-import image5 from '../../public/images/places/5.jpg';
-import image6 from '../../public/images/places/6.jpg';
-import image7 from '../../public/images/places/7.jpg';
-import image8 from '../../public/images/places/8.jpg';
-import image9 from '../../public/images/places/9.jpg';
-import image10 from '../../public/images/places/10.jpg';
-import image11 from '../../public/images/places/11.jpg';
+import hawkLake from '../../public/images/places/hawkLake.jpg';
+import swanBeach from '../../public/images/places/swanBeach.jpg';
+import redLake from '../../public/images/places/redLake.jpg';
+import sablinskieCaves from '../../public/images/places/sablinskieCaves.jpg';
+import estateRoerich from '../../public/images/places/estateRoerich.jpg';
+import ecohotelForest from '../../public/images/places/ecohotelForest.jpg';
+import nizhneSvirskyNatureReserve from
+  '../../public/images/places/nizhneSvirskyNatureReserve.jpg';
+import ecoEstateBelovo from '../../public/images/places/ecoEstateBelovo.jpg';
+import duderhofHeights from '../../public/images/places/duderhofHeights.jpg';
+import lugaBay from '../../public/images/places/lugaBay.jpg';
+import narvaBay from '../../public/images/places/narvaBay.jpg';
 
-export const images = [image1, image2, image3,
-  image4, image5, image6,
-  image7, image8, image9,
-  image10, image11,
+export const images = [
+  hawkLake,
+  swanBeach,
+  redLake,
+  sablinskieCaves,
+  estateRoerich,
+  ecohotelForest,
+  nizhneSvirskyNatureReserve,
+  ecoEstateBelovo,
+  duderhofHeights,
+  lugaBay,
+  narvaBay,
 ];
 
 const imageByIndex = (index) => images[index % images.length];
