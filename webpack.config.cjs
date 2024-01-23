@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,11 +8,10 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 const production = process.env.NODE_ENV === 'production';
 const ASSET_PATH = production ? '/' : 'auto';
-// const HINTS = production ?  : 'error';
 
 module.exports = {
   performance: {
-    hints: 'warning',
+    hints: false,
   },
   entry: {
     bundle: path.resolve(__dirname, './src/index.js'),
@@ -61,6 +59,12 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.ids.HashedModuleIdsPlugin({
+      context: __dirname,
+      hashFunction: 'sha256',
+      hashDigest: 'hex',
+      hashDigestLength: 20,
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
@@ -73,12 +77,11 @@ module.exports = {
         test: /\.js(\?.*)?$/i,
         parallel: true,
         extractComments: false,
+        minify: TerserPlugin.uglifyJsMinify,
       }),
       new ImageMinimizerPlugin({
         minimizer: {
-          // Implementation
           implementation: ImageMinimizerPlugin.imageminMinify,
-          // Options
           options: {
             plugins: [
               'imagemin-gifsicle',
