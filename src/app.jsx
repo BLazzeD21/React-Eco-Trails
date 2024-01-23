@@ -1,25 +1,21 @@
-import React, { StrictMode } from 'react';
+import React, { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Layout from './components/Layout/Layout.jsx';
-import NoMatch from './pages/NoMatch.jsx';
 
-import { Analytics } from '@vercel/analytics/react';
+import Layout from './components/Layout/Layout.jsx';
+const NoMatch = lazy(() => import('./pages/NoMatch.jsx'));
+const Home = lazy(() => import('./pages/Home.jsx'));
 
 import './styles/styles.scss';
-import Home from './pages/Home.jsx';
 
 
 const App = () => {
   return (
-    <StrictMode>
-      <Routes>
-        <Route path='/' element={ <Layout /> }>
-          <Route index element={<Home />}/>
-          <Route path='*' element={<NoMatch />} />
-        </Route>
-      </Routes>
-      <Analytics />
-    </StrictMode>
+    <Routes>
+      <Route path='/' element={ <Layout /> }>
+        <Route index element={<Home />}/>
+        <Route path='*' element={<NoMatch />} />
+      </Route>
+    </Routes>
   );
 };
 

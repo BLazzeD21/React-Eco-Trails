@@ -1,0 +1,32 @@
+.Loader {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: $navy;
+    display: flex;
+    justify-content: center;
+  }
+  border: 15px solid $jungle;
+  border-radius: 50%;
+  border-top: 15px outset $navy;
+  width: 150px;
+  height: 150px;
+  animation: loader 2s linear infinite;
+  &:after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 12px solid $white;
+    border-radius: 50%;
+    border-bottom: 12px outset rgba($color: $navy, $alpha: 0);
+    width: 50px;
+    height: 50px;
+    animation: loader 5s linear infinite;
+  }
+}
