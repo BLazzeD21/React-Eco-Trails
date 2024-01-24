@@ -1,0 +1,24 @@
+@mixin wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $navy;
+}
+
+@mixin stick($position) {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  @if $position == 'right' {
+    right: 50px;
+  } @else {
+    left: 50px;
+  }
+  bottom: 50%;
+  transform: translateY(50%);
+  box-sizing: border-box;
+  background-color: $jungle;
+  border: 1px solid $white;
+}

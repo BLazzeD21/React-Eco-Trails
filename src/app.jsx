@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout.jsx';
 const NoMatch = lazy(() => import('./pages/NoMatch.jsx'));
 const Home = lazy(() => import('./pages/Home.jsx'));
+const Catalog = lazy(() => import('./pages/Catalog.jsx'));
 
 import './styles/styles.scss';
 
@@ -13,6 +14,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={ <Layout /> }>
         <Route index element={<Home />}/>
+        <Route path='catalog' element={<Catalog />}/>
         <Route path='*' element={<NoMatch />} />
       </Route>
     </Routes>

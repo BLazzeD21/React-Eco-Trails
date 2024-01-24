@@ -6,7 +6,8 @@
 
 @import './labs/bootstrap';
 
-@import './base/UI/button';
+@import './blocks/UI/button';
+@import './blocks/UI/sectionTitle';
 
 @import './blocks/navbar';
 @import './blocks/header';
@@ -15,3 +16,4 @@
 @import './blocks/home';
 @import './blocks/embla';
 @import './blocks/loader';
+@import './blocks/catalog';

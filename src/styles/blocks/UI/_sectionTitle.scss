@@ -1,0 +1,16 @@
+.sectionTitle {
+  transition: all 4s ease-in-out 1s;
+  &__wrapper {
+    position: relative;
+  }
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+  position: relative;
+  &:after {
+    @include stick("right");
+  }
+  &:before {
+    @include stick("left");
+  }
+}
