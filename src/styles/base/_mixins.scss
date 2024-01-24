@@ -1,7 +1,8 @@
 @mixin wrapper {
   display: flex;
   min-height: 100vh;
-  background-color: $navy;
+  background: $wet-asphalt;
+  background: radial-gradient(at left center, $wet-asphalt, $french-navy);                                                                                                                       
 }
 
 @mixin stick($position) {

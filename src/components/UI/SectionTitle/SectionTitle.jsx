@@ -5,7 +5,7 @@ const SectionTitle = ({ children }) => {
 
   return (
     <div className="sectionTitle__wrapper">
-      <div className="sectionTitle">{title}</div>
+      <h1 className="sectionTitle">{title}</h1>
     </div>
   );
 };

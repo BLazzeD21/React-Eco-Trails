@@ -5,9 +5,9 @@
   height: 40px;
   border: 1.5px solid $jungle;
   border-radius: 15px;
-  background-color: $navy;
+  background-color: rgba($color: $navy, $alpha: .0);
   &::placeholder {
     color: $white;
-    opacity: .3;
+    opacity: .5;
   }
 }

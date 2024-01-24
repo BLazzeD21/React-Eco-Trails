@@ -5,7 +5,7 @@ const Button = ({ children, to }) => {
   const navigate = useNavigate();
 
   return (
-    <button onClick={()=> {
+    <button onClick={() => {
       navigate(to);
       window.scrollTo(0, 0);
     }}
