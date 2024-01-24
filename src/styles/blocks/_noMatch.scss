@@ -22,6 +22,7 @@
   }
   &__wrapper {
     @include wrapper;
+    align-items: center;
     padding: 20vh 20px;
   }
   &__btn {

@@ -1,5 +1,4 @@
 .catalog {
-  max-width: 1000px;
   &__wrapper {
     @include wrapper;
     padding: 50px 0;
@@ -7,7 +6,10 @@
   &__cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 50px;
-    row-gap: 40px;
+    column-gap: 60px;
+    row-gap: 60px;
+  }
+  &__search {
+    margin: 30px 15px;
   }
 }

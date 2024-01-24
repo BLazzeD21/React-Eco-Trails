@@ -4,9 +4,9 @@ import imageByIndex from '../../store/imageByIndex';
 
 const CustomCard = ({ point }) => {
   const { id, name, shortName, description } = point;
-  const shortDescription = description;
+
   return (
-    <Card shadow="sm" padding="lg" radius="md" w={400}>
+    <Card shadow="sm" padding="lg" radius="md" w={'100%'}>
       <Card.Section>
         <Image
           src={imageByIndex(id - 1)}
@@ -20,16 +20,16 @@ const CustomCard = ({ point }) => {
           variant="gradient"
           gradient={{ from: '#1ABC9C', to: '#18947b', deg: 107 }}
         >
-          {shortName}</Text>
+          {shortName.toUpperCase()}</Text>
       </Box>
       <Box px={10} ta>
         <Text size="sm" c="dimmed" truncate="end">
-          {shortDescription}
+          {description}
         </Text>
       </Box>
 
       <Button color="#1ABC9C" fullWidth mt="md" radius="md">
-        Информация
+        Подробнее
       </Button>
     </Card>
   );
