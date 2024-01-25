@@ -7,7 +7,7 @@ const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 const production = process.env.NODE_ENV === 'production';
-const ASSET_PATH = production ? '/' : 'auto';
+const ASSET_PATH = '/';
 
 module.exports = {
   performance: {
