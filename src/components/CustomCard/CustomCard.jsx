@@ -1,9 +1,17 @@
 import React from 'react';
 import { Card, Image, Text, Button, Box } from '@mantine/core';
 import imageByIndex from '../../store/imageByIndex';
+import { useNavigate } from 'react-router-dom';
 
 const CustomCard = ({ point }) => {
+  const navigate = useNavigate();
   const { id, name, shortName, description } = point;
+
+  const buttonHandler = (id) => {
+    const path = `/catalog/${id}`;
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
 
   return (
     <Card shadow="sm" padding="lg" radius="md" w={'100%'}>
@@ -28,7 +36,11 @@ const CustomCard = ({ point }) => {
         </Text>
       </Box>
 
-      <Button color="#1ABC9C" fullWidth mt="md" radius="md">
+      <Button
+        color="#1ABC9C"
+        fullWidth mt="md"
+        radius="md"
+        onClick={() => buttonHandler(id)}>
         Подробнее
       </Button>
     </Card>

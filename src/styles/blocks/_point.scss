@@ -1,0 +1,28 @@
+.point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: pre-line;
+  &__wrapper {
+    @include wrapper;
+    padding: 50px 0;
+  }
+  &__title {
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  &__img {
+    margin: 40px 0;
+    height: 400px;
+    img {
+      border-radius: 15px;
+      height: 100%;
+    }
+  }
+  &__descr {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
