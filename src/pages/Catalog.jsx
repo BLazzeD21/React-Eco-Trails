@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Container from '../components/Container/Container.jsx';
 import Sectiontitle from '../components/UI/SectionTitle/SectionTitle.jsx';
 import Input from '../components/UI/Input/Input.jsx';
@@ -7,7 +7,8 @@ import ShowCards from '../components/CustomCard/ShowCards.jsx';
 
 
 const Catalog = () => {
-  const [SearchText, FiltredPoints, setSearchText] = usePoints();
+  const [SearchText, FilteredPoints, setSearchText] = usePoints();
+
 
   return (
     <div className="catalog__wrapper">
@@ -23,7 +24,7 @@ const Catalog = () => {
               onChange={(event) => setSearchText(event.target.value)}
             />
           </div>
-          <ShowCards points={FiltredPoints} />
+          <ShowCards points={FilteredPoints} />
         </div>
       </Container>
     </div>

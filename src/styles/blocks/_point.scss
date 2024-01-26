@@ -4,6 +4,7 @@
   align-items: center;
   white-space: pre-line;
   position: relative;
+  padding: 0 20px;
   &__wrapper {
     @include wrapper;
     padding: 50px 0;

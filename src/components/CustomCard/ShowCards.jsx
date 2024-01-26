@@ -10,7 +10,10 @@ const ShowCards = ({ points }) => {
   return (
     <div className="catalog__cards">
       {points.map((point) => (
-        <CustomCard key={point.id} point={point} />
+        <CustomCard
+          key={point.id}
+          point={point}
+        />
       ))}
     </div>
   );

@@ -4,6 +4,7 @@ import { ecotrailPoints } from '../store/points.js';
 import Container from '../components/Container/Container.jsx';
 import Title from '../components/UI/Title/Title.jsx';
 import imageByIndex from '../store/imageByIndex';
+import Button from '../components/UI/Button/Button.jsx';
 
 const ShowPoint = () => {
   const { id } = useParams();
@@ -22,6 +23,9 @@ const ShowPoint = () => {
     <div className="point__wrapper">
       <Container>
         <div className="point">
+          <div className="point__btns">
+            <Button to={-1}>Назад</Button>
+          </div>
           <Title className={'point__title'}>{name}</Title>
           <div className="point__img">
             <img src={image} alt={name} />

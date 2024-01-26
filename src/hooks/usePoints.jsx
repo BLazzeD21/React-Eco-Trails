@@ -4,16 +4,16 @@ import { ecotrailPoints } from '../store/points.js';
 
 export const usePoints = () => {
   const [SearchText, setSearchText] = useState('');
-  const [FiltredPoints, setFiltredPoints] = useState([]);
+  const [FilteredPoints, setFilteredPoints] = useState([]);
 
   useMemo(() => {
     const sorted = ecotrailPoints.filter((point) =>
       point.name.toLowerCase().includes(SearchText.toLowerCase()),
     );
 
-    setFiltredPoints(sorted);
+    setFilteredPoints(sorted);
   }
   , [SearchText]);
 
-  return [SearchText, FiltredPoints, setSearchText];
+  return [SearchText, FilteredPoints, setSearchText];
 };
