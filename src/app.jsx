@@ -10,22 +10,14 @@ const ShowPoint = lazy(() => import('./pages/ShowPoint.jsx'));
 
 import './styles/styles.scss';
 
-
 const App = () => {
-  const [search, setSearch] = useState('');
-
   return (
     <Routes>
-      <Route path='/' element={ <Layout /> }>
-        <Route index element={<Home />}/>
-        <Route path='catalog' element={
-          <Catalog
-            search={search}
-            setSearch={setSearch}
-          />
-        }/>
-        <Route path="/catalog/:id" element={<ShowPoint/>} />
-        <Route path='*' element={<NoMatch />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="catalog" element={<Catalog />} />
+        <Route path="/catalog/:id" element={<ShowPoint />} />
+        <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
   );

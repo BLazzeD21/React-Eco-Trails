@@ -6,11 +6,11 @@ import { usePoints } from '../hooks/usePoints.jsx';
 import ShowCards from '../components/CustomCard/ShowCards.jsx';
 
 
-const Catalog = ({ search, setSearch }) => {
+const Catalog = () => {
   const [SearchText,
     FilteredPoints,
     setSearchText,
-  ] = usePoints(search, setSearch);
+  ] = usePoints();
 
 
   return (
