@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React, { lazy, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout.jsx';
@@ -12,11 +12,18 @@ import './styles/styles.scss';
 
 
 const App = () => {
+  const [search, setSearch] = useState('');
+
   return (
     <Routes>
       <Route path='/' element={ <Layout /> }>
         <Route index element={<Home />}/>
-        <Route path='catalog' element={<Catalog />}/>
+        <Route path='catalog' element={
+          <Catalog
+            search={search}
+            setSearch={setSearch}
+          />
+        }/>
         <Route path="/catalog/:id" element={<ShowPoint/>} />
         <Route path='*' element={<NoMatch />} />
       </Route>

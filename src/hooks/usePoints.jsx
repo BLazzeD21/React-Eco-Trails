@@ -2,8 +2,7 @@
 import React, { useMemo, useState } from 'react';
 import { ecotrailPoints } from '../store/points.js';
 
-export const usePoints = () => {
-  const [SearchText, setSearchText] = useState('');
+export const usePoints = (SearchText, setSearchText) => {
   const [FilteredPoints, setFilteredPoints] = useState([]);
 
   useMemo(() => {

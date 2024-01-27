@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { ecotrailPoints } from '../store/points.js';
 import Container from '../components/Container/Container.jsx';
 import Title from '../components/UI/Title/Title.jsx';
@@ -25,6 +25,7 @@ const ShowPoint = () => {
         <div className="point">
           <div className="point__btns">
             <Button to={-1}>Назад</Button>
+            <Button to={'/'}>Главная</Button>
           </div>
           <Title className={'point__title'}>{name}</Title>
           <div className="point__img">

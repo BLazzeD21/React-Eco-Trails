@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Container from '../components/Container/Container.jsx';
 import Sectiontitle from '../components/UI/SectionTitle/SectionTitle.jsx';
 import Input from '../components/UI/Input/Input.jsx';
@@ -6,8 +6,11 @@ import { usePoints } from '../hooks/usePoints.jsx';
 import ShowCards from '../components/CustomCard/ShowCards.jsx';
 
 
-const Catalog = () => {
-  const [SearchText, FilteredPoints, setSearchText] = usePoints();
+const Catalog = ({ search, setSearch }) => {
+  const [SearchText,
+    FilteredPoints,
+    setSearchText,
+  ] = usePoints(search, setSearch);
 
 
   return (
