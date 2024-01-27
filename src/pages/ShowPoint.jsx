@@ -5,11 +5,14 @@ import Container from '../components/Container/Container.jsx';
 import Title from '../components/UI/Title/Title.jsx';
 import imageByIndex from '../store/imageByIndex';
 import Button from '../components/UI/Button/Button.jsx';
-
+import NoMatch from '../pages/NoMatch.jsx';
 const ShowPoint = () => {
   const { id } = useParams();
   const pointId = id - 1;
 
+  if (!ecotrailPoints[pointId]) {
+    return (<NoMatch></NoMatch>);
+  }
   const { name,
     description,
     infrastructure,
@@ -18,6 +21,7 @@ const ShowPoint = () => {
     coordinates } = ecotrailPoints[pointId];
 
   const image = imageByIndex(pointId);
+
 
   return (
     <div className="point__wrapper">
