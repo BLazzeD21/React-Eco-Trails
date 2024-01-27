@@ -1,8 +1,11 @@
 import React from 'react';
 import Container from '../components/Container/Container.jsx';
 import Button from '../components/UI/Button/Button.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const NoMatch = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='noMatch__wrapper'>
       <Container>
@@ -14,7 +17,10 @@ const NoMatch = () => {
           </div>
         </div>
         <div className="noMatch__btn">
-          <Button to={'/'}>На главную</Button>
+          <Button onClick={() => {
+            navigate('/');
+            window.scrollTo(0, 0);
+          }} >На главную</Button>
         </div>
       </Container>
     </div>

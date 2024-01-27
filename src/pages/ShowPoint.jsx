@@ -1,18 +1,23 @@
 import React from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ecotrailPoints } from '../store/points.js';
 import Container from '../components/Container/Container.jsx';
 import Title from '../components/UI/Title/Title.jsx';
 import imageByIndex from '../store/imageByIndex';
 import Button from '../components/UI/Button/Button.jsx';
 import NoMatch from '../pages/NoMatch.jsx';
+
+
 const ShowPoint = () => {
+  const navigate = useNavigate();
+
   const { id } = useParams();
   const pointId = id - 1;
 
   if (!ecotrailPoints[pointId]) {
     return (<NoMatch></NoMatch>);
   }
+
   const { name,
     description,
     infrastructure,
@@ -22,14 +27,21 @@ const ShowPoint = () => {
 
   const image = imageByIndex(pointId);
 
-
   return (
     <div className="point__wrapper">
       <Container>
         <div className="point">
           <div className="point__btns">
-            <Button to={-1}>Назад</Button>
-            <Button to={'/'}>Главная</Button>
+            <Button onClick={() => {
+              navigate('/catalog', { state:
+                { searchQueue: localStorage.searchQueue },
+              });
+              window.scrollTo(0, 0);
+            }}>Назад</Button>
+            <Button onClick={() => {
+              navigate('/');
+              window.scrollTo(0, 0);
+            }}>Главная</Button>
           </div>
           <Title className={'point__title'}>{name}</Title>
           <div className="point__img">

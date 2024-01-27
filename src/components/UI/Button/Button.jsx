@@ -1,15 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const Button = ({ children, to }) => {
-  const navigate = useNavigate();
-
+const Button = ({ children, onClick }) => {
   return (
-    <button onClick={() => {
-      navigate(to);
-      window.scrollTo(0, 0);
-    }}
-    className='custom_button'>
+    <button onClick={onClick}
+      className='custom_button'>
       {children.toUpperCase()}
     </button>
   );

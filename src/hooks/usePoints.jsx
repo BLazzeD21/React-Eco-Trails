@@ -11,6 +11,7 @@ export const usePoints = () => {
       point.name.toLowerCase().includes(SearchText.toLowerCase()),
     );
 
+    localStorage.searchQueue = SearchText;
     setFilteredPoints(sorted);
   }
   , [SearchText]);

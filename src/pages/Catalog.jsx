@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Container from '../components/Container/Container.jsx';
 import Sectiontitle from '../components/UI/SectionTitle/SectionTitle.jsx';
 import Input from '../components/UI/Input/Input.jsx';
 import { usePoints } from '../hooks/usePoints.jsx';
 import ShowCards from '../components/CustomCard/ShowCards.jsx';
+import { useLocation } from 'react-router-dom';
 
 
 const Catalog = () => {
@@ -11,6 +12,14 @@ const Catalog = () => {
     FilteredPoints,
     setSearchText,
   ] = usePoints();
+
+  const location = useLocation();
+
+  useEffect(()=> {
+    if (location.state?.searchQueue) {
+      setSearchText(location.state?.searchQueue);
+    }
+  }, []);
 
 
   return (
