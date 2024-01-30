@@ -10,7 +10,6 @@ const Header = ({ title }) => {
     { id: 1, title: 'Главная', url: '/' },
     { id: 2, title: 'Каталог', url: '/catalog' },
     { id: 3, title: 'Эко-карта', url: '/map' },
-    { id: 4, title: 'FAQ', url: '/FAQ' },
   ];
 
   return (
