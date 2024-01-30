@@ -72,7 +72,7 @@ module.exports = {
     }),
     new NodePolyfillPlugin(),
     new Dotenv({ systemvars: true }),
-    new FaviconsWebpackPlugin('./public/favicon.ico'),
+    new FaviconsWebpackPlugin('./public/favicon.png'),
   ],
   optimization: {
     minimize: true,
