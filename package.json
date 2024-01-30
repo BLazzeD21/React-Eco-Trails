@@ -38,6 +38,8 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "favicons": "^7.1.5",
+    "favicons-webpack-plugin": "^6.0.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
     "image-minimizer-webpack-plugin": "^4.0.0",
