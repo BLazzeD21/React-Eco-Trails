@@ -71,7 +71,7 @@ module.exports = {
       template: './src/index.html',
     }),
     new NodePolyfillPlugin(),
-    new Dotenv(),
+    new Dotenv({ systemvars: true }),
     new FaviconsWebpackPlugin('./public/favicon.ico'),
   ],
   optimization: {
