@@ -2,7 +2,9 @@ import React from 'react';
 import YandexMap from '../components/Map/YandexMap.jsx';
 
 const Map = () => {
-  return (<YandexMap />);
+  return (
+    <YandexMap />
+  );
 };
 
 export default Map;
