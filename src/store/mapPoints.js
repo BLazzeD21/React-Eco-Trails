@@ -1,4 +1,3 @@
-import React from 'react';
 import { ecotrailPoints } from './points';
 import imageByIndex from './imageByIndex.js';
 

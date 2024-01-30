@@ -8,6 +8,7 @@ const Home = lazy(() => import('./pages/Home.jsx'));
 const Catalog = lazy(() => import('./pages/Catalog.jsx'));
 const ShowPoint = lazy(() => import('./pages/ShowPoint.jsx'));
 const Map = lazy(() => import('./pages/Map.jsx'));
+
 import './styles/styles.scss';
 
 
