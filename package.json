@@ -12,6 +12,7 @@
   "license": "Apache License",
   "dependencies": {
     "@mantine/core": "^7.4.2",
+    "@pbe/react-yandex-maps": "^1.2.5",
     "@vercel/analytics": "^1.1.2",
     "axios": "^1.6.5",
     "bootstrap": "^5.3.2",
