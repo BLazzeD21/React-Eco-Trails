@@ -95,10 +95,17 @@
     &__cards {
       grid-template-columns: 1fr;
     }
+    &__wrapper {
+      padding: 75px 0 ;
+    }
   }
   .point {
     &__img {
       height: 200px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 28px;
     }
   }
 }

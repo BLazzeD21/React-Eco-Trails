@@ -1,0 +1,36 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0 0 0;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  min-height: 120px;
+  background: linear-gradient(268deg, $mint 42%, $lagoon 102.43%);
+  top: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  transform: translateY(-100%);
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+  }
+  &__item {
+    font-size: 20px;
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .active_item {
+      color: $navy;
+      &::after{
+        background: $navy;
+      }
+    }
+
+  }
+  &__active {
+    transform: translateY(0);
+  }
+}
