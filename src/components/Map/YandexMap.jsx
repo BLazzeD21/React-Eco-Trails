@@ -19,6 +19,9 @@ const YandexMap = () => {
         }}
         width={ '100%' }
         height={ '100vh'}
+        instanceRef={(ref) => {
+          ref && ref.behaviors.disable('scrollZoom');
+        }}
       >
         <ObjectManager
           options={{
@@ -40,7 +43,15 @@ const YandexMap = () => {
             'objectManager.addon.objectsHint',
           ]}
         />
-        <ZoomControl options={{ float: 'right' }} />
+        <ZoomControl options={
+          {
+            position: {
+              top: '250px',
+              left: '15px',
+            },
+            size: 'large',
+          }
+        } />
       </Map>
     </YMaps>
   );
