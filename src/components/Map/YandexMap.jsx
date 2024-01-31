@@ -46,7 +46,7 @@ const YandexMap = () => {
         <ZoomControl options={
           {
             position: {
-              top: '250px',
+              top: 200,
               left: '15px',
             },
             size: 'large',
