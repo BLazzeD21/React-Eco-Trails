@@ -10,6 +10,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const production = process.env.NODE_ENV === 'production';
 const ASSET_PATH = '/';
+const HOST = '127.0.0.1';
 
 module.exports = {
   performance: {
@@ -99,10 +100,24 @@ module.exports = {
     ],
   },
   devServer: {
+    allowedHosts: HOST,
     compress: true,
     port: 3001,
+    host: HOST,
     hot: true,
     historyApiFallback: true,
+    client: {
+      overlay: true,
+      logging: 'info',
+      progress: true,
+    },
+    proxy: {
+      '/api/**': {
+        target: `${HOST}:8000`,
+        secure: false,
+        changeOrigin: true,
+      },
+    },
   },
   mode: production ? 'production' : 'development',
 };
