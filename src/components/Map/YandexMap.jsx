@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { YMaps, Map, ObjectManager, ZoomControl } from '@pbe/react-yandex-maps';
 import objectManagerFeatures from '../../store/mapPoints.js';
 
 const YandexMap = () => {
-  const mapHeight = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--mapHeight', `${mapHeight}px`);
+  const height = document.documentElement.clientHeight;
+  const [mapHeight, setMapHeight] = useState(height * 0.01);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setMapHeight(height * 0.01);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--mapHeight', `${mapHeight}px`);
+  }, [mapHeight]);
+
 
   return (
     <YMaps
