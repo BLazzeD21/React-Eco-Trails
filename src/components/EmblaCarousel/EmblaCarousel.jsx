@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { DotButton } from './EmblaCarouselArrowButtons.jsx';
 import imageByIndex from './../../store/imageByIndex.js';
-
+import { ecotrailPoints } from '../../store/points.js';
 const EmblaCarousel = (props) => {
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
@@ -54,7 +54,7 @@ const EmblaCarousel = (props) => {
                 <img
                   className="embla__slide__img"
                   src={imageByIndex(index)}
-                  alt="Your alt text"
+                  alt={ecotrailPoints.name}
                 />
               </div>
             ))}
