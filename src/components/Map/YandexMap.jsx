@@ -3,6 +3,9 @@ import { YMaps, Map, ObjectManager, ZoomControl } from '@pbe/react-yandex-maps';
 import objectManagerFeatures from '../../store/mapPoints.js';
 
 const YandexMap = () => {
+  const mapHeight = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--mapHeight', `${mapHeight}px`);
+
   return (
     <YMaps
       query={{
@@ -17,8 +20,8 @@ const YandexMap = () => {
           zoom: 8,
           controls: [],
         }}
-        width={ '100%' }
-        height={ 'calc(100vh - 115px)'}
+        height={'calc(var(--mapHeight) * 100 - 115px)'}
+        width={'100%'}
         instanceRef={(ref) => {
           ref && ref.behaviors.disable('scrollZoom');
         }}
