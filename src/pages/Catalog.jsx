@@ -1,23 +1,33 @@
 import React, { useEffect } from 'react';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import Container from '../components/Container/Container.jsx';
 import Sectiontitle from '../components/UI/SectionTitle/SectionTitle.jsx';
 import Input from '../components/UI/Input/Input.jsx';
 import { usePoints } from '../hooks/usePoints.jsx';
 import ShowCards from '../components/CustomCard/ShowCards.jsx';
-import { useLocation } from 'react-router-dom';
 
 
 const Catalog = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [SearchText,
     FilteredPoints,
     setSearchText,
-  ] = usePoints();
+  ] = usePoints(setSearchParams);
 
   const location = useLocation();
 
   useEffect(()=> {
     if (location.state?.searchQueue) {
+      setSearchParams({ search: location.state?.searchQueue });
       setSearchText(location.state?.searchQueue);
+    }
+  }, []);
+
+  useEffect(()=> {
+    if (searchParams.has('search')) {
+      const searchQueue = searchParams.get('search');
+      setSearchText(searchQueue);
     }
   }, []);
 
