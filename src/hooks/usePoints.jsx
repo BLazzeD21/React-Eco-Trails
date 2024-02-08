@@ -1,20 +1,22 @@
-
-import React, { useMemo, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ecotrailPoints } from '../store/points.js';
 
-export const usePoints = () => {
+export const usePoints = (setSearchParams) => {
   const [SearchText, setSearchText] = useState('');
   const [FilteredPoints, setFilteredPoints] = useState([]);
 
-  useMemo(() => {
+  useEffect(() => {
     const sorted = ecotrailPoints.filter((point) =>
-      point.name.toLowerCase().includes(SearchText.toLowerCase()),
+      point.name.toLowerCase().includes(SearchText.toLowerCase()) ||
+      point.shortName.toLowerCase().includes(SearchText.toLowerCase()) ||
+      point.address.toLowerCase().includes(SearchText.toLowerCase()) ||
+      point.id === Number(SearchText),
     );
 
     localStorage.searchQueue = SearchText;
     setFilteredPoints(sorted);
-  }
-  , [SearchText]);
+    setSearchParams({ search: SearchText });
+  }, [SearchText, setSearchParams]);
 
   return [SearchText, FilteredPoints, setSearchText];
 };
