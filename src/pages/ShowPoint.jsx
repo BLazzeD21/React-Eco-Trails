@@ -63,10 +63,20 @@ const ShowPoint = () => {
           <div className="point__address">
             <p>
               <b>Адрес: </b>{address}
-              <br />
-              <b>Координаты: </b>{`[${coordinates[0]}, ${coordinates[1]}]`}
             </p>
           </div>
+          <div className="point__coordinates">
+            <b>Координаты</b>
+            <br />
+            {`[${coordinates[0]}, ${coordinates[1]}]`}
+          </div>
+        </div>
+        <div className="point__route">
+          <a href={`https://yandex.ru/maps/?rtext=~${coordinates[0]}%2C${coordinates[1]}`} target="_blank" rel="noreferrer">
+            <button className="point__btn">
+              Построить маршрут
+            </button>
+          </a>
         </div>
       </Container>
     </div>

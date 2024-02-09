@@ -5,6 +5,10 @@
   white-space: pre-line;
   position: relative;
   padding: 0 20px;
+  b {
+    color: $lagoon;
+    font-size: 16px;
+  }
   &__wrapper {
     @include wrapper;
     padding: 50px 0;
@@ -22,7 +26,7 @@
       height: 100%;
     }
   }
-   &__descr, &__services, &__infrastructure, &__address {
+   &__descr, &__services, &__infrastructure, &__address, &__coordinates {
     width: 100%;
   }
   p {
@@ -39,5 +43,26 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+  }
+  &__route {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+  }
+  &__btn {
+    width: 100%;
+    padding: 1px 2rem;
+    border: 1px solid #2C3E50;
+    height: 50px;
+    background-color: #34495E;
+    &:hover {
+      background-color: #2C3E50;
+      border: 1px solid #34495E;
+    }
+  }
+  &__coordinates {
+    text-align: center;
+    font-size: 15px;
   }
 }
