@@ -3,7 +3,7 @@ import CustomCard from './CustomCard.jsx';
 import NotFound from '../NotFound/NotFound.jsx';
 
 const ShowCards = ({ points }) => {
-  if (!points.length) {
+  if (!points || points.length === 0) {
     return <NotFound></NotFound>;
   }
 

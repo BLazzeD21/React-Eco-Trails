@@ -6,20 +6,20 @@ export const usePoints = (setSearchParams) => {
   const [FilteredPoints, setFilteredPoints] = useState([]);
 
   useEffect(() => {
-    const sorted = ecotrailPoints.filter(
-        (point) =>
-          (point.name &&
-          point.name.toLowerCase().includes(SearchText.toLowerCase())) ||
-        (point.shortName &&
-          point.shortName.toLowerCase().includes(SearchText.toLowerCase())) ||
-        (point.address &&
-          point.address.toLowerCase().includes(SearchText.toLowerCase())) ||
-        (point.id && point.id === Number(SearchText)),
-    );
+    const filtered = ecotrailPoints.filter((point) => {
+      const searchTextLowerCase = SearchText.toLowerCase();
+      const matchesSearch =
+        point.name.toLowerCase().includes(searchTextLowerCase) ||
+        point.shortName.toLowerCase().includes(searchTextLowerCase) ||
+        point.address.toLowerCase().includes(searchTextLowerCase) ||
+        point.id === Number(SearchText);
+      return matchesSearch;
+    });
 
     localStorage.searchQueue = SearchText;
 
-    setFilteredPoints(sorted);
+    setFilteredPoints(filtered);
+
     setSearchParams({ search: SearchText });
   }, [SearchText, setSearchParams]);
 
