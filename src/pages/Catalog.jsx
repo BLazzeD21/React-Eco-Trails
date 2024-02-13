@@ -22,15 +22,12 @@ const Catalog = () => {
       setSearchParams({ search: location.state?.searchQueue });
       setSearchText(location.state?.searchQueue);
     }
-  }, []);
 
-  useEffect(()=> {
     if (searchParams.has('search')) {
       const searchQueue = searchParams.get('search');
       setSearchText(searchQueue);
     }
   }, []);
-
 
   return (
     <div className="catalog__wrapper">
@@ -46,7 +43,7 @@ const Catalog = () => {
               onChange={(event) => setSearchText(event.target.value)}
             />
           </div>
-          <ShowCards points={FilteredPoints} />
+          <ShowCards points={FilteredPoints } />
         </div>
       </Container>
     </div>
